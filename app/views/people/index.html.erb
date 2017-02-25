@@ -1,2 +1,31 @@
-<h1>People#index</h1>
-<p>Find me in app/views/people/index.html.erb</p>
+<div class="card-panel teal lighten-2 center">
+<h1>People</h1>
+</div>
+<hr />
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Hair Color</th>
+        <th>Eye Color</th>
+        <th>Gender</th>
+        <th>Alive?</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @people.each do |person| %>
+        <tr>
+          <td><%= person.name.titleize %></td>
+          <td><%= person.age %></td>
+          <td><%= person.hair_color.capitalize %></td>
+          <td><%= person.eye_color.capitalize %></td>
+          <td><%= person.gender.capitalize %></td>
+          <td><%= person.alive %></td>
+          <td><%= link_to 'Show Person', person_path(person) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<%= link_to 'Add New Person', new_person_path, class:'btn teal lighten-2 black-text hoverable' %>

@@ -1,2 +1,40 @@
-<h1>People#show</h1>
-<p>Find me in app/views/people/show.html.erb</p>
+<div class="card-panel teal lighten-2 center">
+<h1>Person Information</h1>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Hair Color</th>
+      <th>Eye Color</th>
+      <th>Gender</th>
+      <th>Alive?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @person.name.titleize %></td>
+      <td><%= @person.age %></td>
+      <td><%= @person.hair_color.capitalize %></td>
+      <td><%= @person.eye_color.capitalize %></td>
+      <td><%= @person.gender.capitalize %></td>
+      <td><%= @person.alive %></td>
+    </tr>
+  </tbody>
+</table>
+<hr />
+
+<div>
+<%= link_to 'Edit Person Details', edit_person_path(@person), class: 'btn teal
+lighten-2 black-text hoverable' %></a>
+</div>
+
+<div>
+<%= link_to 'Delete Person', @person, method: :delete, data:
+{ confirm: 'Are you sure?' }, class:'btn teal lighten-2 black-text hoverable' %>
+</div>
+
+<div>
+  <%= link_to 'Home', root_path, class:'btn teal lighten-2 black-text hoverable' %>
+</div>

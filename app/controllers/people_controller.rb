@@ -44,6 +44,6 @@ private
   end
 
   def person_params
-    params_require(:person).permit(:name, :age, :hair_color, :eye_color, :gender, :alive)
+    params.require(:person).permit(:name, :age, :hair_color, :eye_color, :gender, :alive)
   end
 end

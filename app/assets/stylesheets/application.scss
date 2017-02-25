@@ -1,3 +1,14 @@
+@import "materialize";
+
+div {
+  display: inline-block;
+  margin: 5px;
+}
+
+.card-panel {
+  display: block;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
